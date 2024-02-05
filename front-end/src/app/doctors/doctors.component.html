@@ -1,0 +1,50 @@
+<header>
+    <a mat-button *ngFor="let category of categories">{{ category }}</a>
+    <div class="search-field">
+        <input matInput type="text" name="firstName" id="search" placeholder="Search...">
+        <button id="search-button"><mat-icon>search</mat-icon></button>
+    </div>
+</header>
+
+<main>
+    <h2>Main Doctors</h2>
+    <mat-divider></mat-divider>
+    <div class="doctor-list">
+        <mat-card class="doctor-card" *ngFor="let doctor of doctors">
+            <mat-card-header>
+              <mat-card-title>{{doctor.name}}</mat-card-title>
+              <mat-card-subtitle>{{doctor.specialization}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image [src]="doctor.image" alt="Photo of a Shiba Inu">
+            <button mat-flat-button color="primary">Book Appointment</button>
+        </mat-card>
+    </div>
+
+    <h2>Duty Doctors</h2>
+    <mat-divider></mat-divider>
+    <div class="doctor-list">
+        <mat-card class="doctor-card" *ngFor="let doctor of duty_doctors">
+            <mat-card-header>
+              <mat-card-title>{{doctor.name}}</mat-card-title>
+              <mat-card-subtitle>{{doctor.specialization}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image [src]="doctor.image" alt="Photo of a Shiba Inu">
+            <button mat-flat-button color="primary">Book Appointment</button>
+        </mat-card>
+    </div>
+</main>
+
+<footer>
+    <mat-paginator #paginator
+        class="demo-paginator"
+        (page)="handlePageEvent($event)"
+        [length]="length"
+        [pageSize]="pageSize"
+        [disabled]="disabled"
+        [showFirstLastButtons]="false"
+        [pageSizeOptions]="false ? pageSizeOptions : []"
+        [hidePageSize]="true"
+        [pageIndex]="pageIndex"
+        aria-label="Select page">
+    </mat-paginator>
+</footer>

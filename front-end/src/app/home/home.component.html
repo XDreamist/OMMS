@@ -1,0 +1,129 @@
+<div class="carousel">
+  <button class="scroll-button prev-button" mat-icon-button (click)="caro_scroll(-1)">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+  <div class="carousel_inner" #carousel_inner>
+      <div class="carousel-item">
+        <div class="carousel-content">
+          <h1>Welcome to OMMS</h1>
+          <p>
+              OMMS (Online Medical Management System) is your trusted platform for managing your health and medical needs. Here's what you can do:
+          </p>
+        </div>
+          <img [src]="images[0]" alt="Image 1">
+      </div>
+      <div class="carousel-item">
+          <img [src]="images[1]" alt="Image 2">
+      </div>
+      <div class="carousel-item">
+          <img [src]="images[2]" alt="Image 3">
+      </div>
+  </div>
+  <button class="scroll-button next-button" mat-icon-button (click)="caro_scroll(1)">
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+</div>
+
+<div class="home-content">
+  <h1>Our Services</h1>
+  <div class="services">
+      <div class="service">
+          <h2>Book Appointments</h2>
+          <p>Easily schedule appointments with our skilled and caring doctors. We offer a wide range of medical specialties to cater to your health concerns.</p>
+          <div class="doctor-list">
+            <mat-card class="doctor-card" *ngFor="let doctor of doctors">
+              <mat-card-header>
+                <!-- <div mat-card-avatar class="doctor-header-image"></div> -->
+                <mat-card-title>{{doctor.name}}</mat-card-title>
+                <mat-card-subtitle>{{doctor.specialization}}</mat-card-subtitle>
+              </mat-card-header>
+              <img mat-card-image [src]="doctor.image" alt="Photo of a Shiba Inu">
+                  <button mat-flat-button color="primary">Book Appointment</button>
+            </mat-card>
+          </div>
+          <p>If you want to see more doctors, view all <a routerLink="/doctors">doctors</a> here.</p>
+      </div>
+      <div class="service">
+          <h2>Pharmacy</h2>
+          <p>Browse our online pharmacy and select from a vast selection of prescription and over-the-counter medicines. Add items to your cart, and we'll deliver them to your doorstep. 
+            Here are some products from out pharmacy, for you to check it out.</p>
+          <div class="product-list-container">
+            <button class="scroll-button prev-button" mat-icon-button (click)="scroll(-1)">
+              <mat-icon>keyboard_arrow_left</mat-icon>
+            </button>
+            <section class="product-list" #productList>
+              <div class="product-card" *ngFor="let medicine of medicines">
+                <img [src]="medicine.image" alt="{{ medicine.name }}" />
+                <h3>{{ medicine.name }}</h3>
+                <mat-divider class="med-divider"></mat-divider>
+                <div class="med-content">
+                  <p>{{ medicine.manufacturer }}</p>
+                  <div class="row">
+                    <span class="price">&#8377; {{ medicine.price }}&emsp;</span>
+                    <button mat-flat-button color="primary">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <button class="scroll-button next-button" mat-icon-button (click)="scroll(1)">
+              <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
+          </div>
+          <p>If you want to checkout more, go to our <a routerLink="/pharmacy">pharmacy</a> right here</p>
+          
+      </div>
+  </div>
+
+  <h2>Why Choose OMMS?</h2>
+  <div class="mat-card-list">
+      <mat-card class="mat-card-item">
+        <div class="row">
+          <mat-icon class="mat-icon-item">home</mat-icon>
+          <h3>Convenience:</h3>
+        </div>
+        Manage your health from the comfort of your home.
+      </mat-card>
+      <mat-card class="mat-card-item">
+        <div class="row">
+          <mat-icon class="mat-icon-item">local_hospital</mat-icon>
+          <h3>Quality Care:</h3>
+        </div>
+        Our team of experienced doctors ensures top-notch medical services.
+      </mat-card>
+      <mat-card class="mat-card-item">
+        <div class="row">
+          <mat-icon class="mat-icon-item">lock</mat-icon>
+          <h3>Secure Transactions:</h3>
+        </div>
+        Shop for medicines with confidence.
+      </mat-card>
+      <mat-card class="mat-card-item">
+        <div class="row">
+          <mat-icon class="mat-icon-item">headset_mic</mat-icon>
+          <h3>24/7 Customer Support:</h3>
+        </div>
+        Reach out to our dedicated customer care team for assistance.
+      </mat-card>
+  </div>
+  
+  <div class="inv_container">
+    <h2>Get Started</h2>
+    
+    <img class="last_image" src="assets\log.png" alt="Head image">
+
+    <p>
+        Ready to experience the future of healthcare? Sign up or log in to OMMS now and take control of your well-being.
+    </p>
+
+    <div class="cta-buttons">
+        <a mat-raised-button routerLink="/login" class="cta-button">
+            Sign Up
+            <mat-icon>person_add</mat-icon>
+        </a>
+        <a mat-raised-button routerLink="/login" class="cta-button">
+            Log In
+            <mat-icon>login</mat-icon>
+        </a>
+    </div>
+  </div>
+</div>

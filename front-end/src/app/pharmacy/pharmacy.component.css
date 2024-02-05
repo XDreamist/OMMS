@@ -1,0 +1,272 @@
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 15px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+footer
+{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #fff;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.search-field input[type="text"],
+.search-field button 
+{
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.search-field 
+{
+  display: flex;
+  align-items: center;
+  padding: 0;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-field input[type="text"] 
+{
+  flex: 1;
+  padding: 8px;
+}
+
+.search-field button 
+{
+  padding: 8px;
+  background-color: #3f51b5;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-field button:hover 
+{
+  background-color: #3a4baa;
+}
+
+.search-field mat-icon 
+{
+  height: 21px;
+}
+
+aside.sidebar 
+{
+  background-color: #fff;
+  padding: 20px;
+  width: 250px;
+  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.company-filters 
+{
+  margin-bottom: 20px;
+}
+
+.company-filters h4 
+{
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.company-filters ul 
+{
+  list-style: none;
+  padding: 0;
+}
+
+.company-filters li 
+{
+  margin-bottom: 5px;
+}
+
+.price-slider
+{
+  margin-bottom: 20px;
+}
+
+.price-slider h4 
+{
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.price-slider mat-slider 
+{
+  width: 90%;
+}
+
+.price-slider p 
+{
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+main 
+{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.product-list 
+{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 80%;
+  flex: 1;
+  margin: 20px;
+  margin-right: 3px;
+}
+
+.product-list .card:not(:last-child) 
+{
+  margin-right: 0;
+}
+
+.product-list.card-small 
+{
+  height: 16px;
+  width: 148px;
+}
+
+.product-list .card:not(.highlight-card) 
+{
+  cursor: pointer;
+}
+
+.product-list .card:not(.highlight-card):hover
+{
+  transform: translateY(-3px);
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+}
+
+.product-list .card:not(.highlight-card):hover .material-icons path 
+{
+  fill: rgb(105, 103, 103);
+}
+
+.price 
+{
+  font-weight: bold;
+}
+
+.card svg.material-icons path 
+{
+  fill: #888;
+}
+
+.card-container 
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.card 
+{
+  /* all: unset; */
+  /* border-radius: 4px; */
+  border: 1px solid #eee;
+  background-color: #fff;
+  /* height: 40px; */
+  width: calc(33.33% - 40px);
+  /* margin: 0 8px 16px; */
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  line-height: 24px;
+
+  /* background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px; */
+  text-align: center;
+  /* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.card h3 
+{
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.card img
+{
+  height: 200px;
+  max-width: 100%;
+}
+
+.row
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.row-1
+{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.rate-button 
+{
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.rate-button:hover 
+{
+  color: gold;
+}
+
+.med-divider
+{
+  width: 60%;
+  margin-bottom: 5px;
+}
+
+.mat-mdc-paginator
+{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* .med-content
+{
+  /* width: 100%; */
+  /* border-top: 1px solid whitesmoke;
+  padding-top: 10px; */
+  /* background-color: #eee; */
+/* } */

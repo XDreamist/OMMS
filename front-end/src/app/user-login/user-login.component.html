@@ -1,0 +1,26 @@
+<div class="main">
+    <div class="sub-box">
+        <h2>
+            <span><mat-icon>health_and_safety</mat-icon> OMMS</span>
+        </h2>
+        <form class="login-form">
+            <mat-form-field class="input-field" appearance="outline">
+                <mat-label>Phone number, username, or email</mat-label>
+                <input matInput type="text" required>
+            </mat-form-field>
+        
+            <mat-form-field class="input-field" appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+
+            <button mat-flat-button type="submit" color="primary">Login</button>
+        </form>
+    </div>
+    <div class="sub-box">
+        <span>Don't have an account? <a routerLink="/signup">Sign up</a></span>
+    </div>
+</div>

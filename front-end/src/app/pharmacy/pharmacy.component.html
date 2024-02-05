@@ -1,0 +1,68 @@
+<header>
+    <a mat-button *ngFor="let category of categories">{{ category }}</a>
+    <div class="search-field">
+        <input matInput type="text" name="firstName" id="search" placeholder="Search...">
+        <button id="search-button"><mat-icon>search</mat-icon></button>
+    </div>
+</header>
+
+<main>
+    <aside class="sidebar">
+        <section class="company-filters">
+            <h4>Company Filters</h4>
+            <ul>
+                <li><mat-checkbox color="primary">Company 1</mat-checkbox></li>
+                <li><mat-checkbox color="primary">Company 2</mat-checkbox></li>
+                <li><mat-checkbox color="primary">Company 3</mat-checkbox></li>
+                <li><mat-checkbox color="primary">Company 4</mat-checkbox></li>
+            </ul>
+            <mat-divider></mat-divider>
+        </section>
+    
+        <section class="price-slider">
+            <h4>Price Range</h4>
+            <mat-slider min="0" max="100" step="0.5" [ngModel]="priceRange" (ngModelChange)="onPriceRangeChange()">
+                <input matSliderStartThumb>
+                <input matSliderEndThumb>
+            </mat-slider>              
+            <p>Price: <span id="price-value">&#8377;{{ priceRange.start }} - &#8377;{{ priceRange.end }}</span></p>
+            <mat-divider></mat-divider>
+        </section>
+
+        <section class="avg-customer-reviews">
+            <h4>Average Customer Reviews</h4>
+            <div class="row-1">
+                <a class="rate-button"><mat-icon>star_outline</mat-icon></a>
+                <a class="rate-button"><mat-icon>star_outline</mat-icon></a>
+                <a class="rate-button"><mat-icon>star_outline</mat-icon></a>
+                <a class="rate-button"><mat-icon>star_outline</mat-icon></a>
+                <a class="rate-button"><mat-icon>star_outline</mat-icon></a>
+            </div>
+        </section>
+    
+    </aside>
+
+    <section class="product-list">
+        <a class="card" *ngFor="let medicine of medicines">
+            <img [src]="medicine.image" alt="{{ medicine.name }}">
+            <h3>{{ medicine.name }}</h3>
+            <mat-divider class="med-divider"></mat-divider>
+            <div class="med-content">
+                
+                <p>{{ medicine.manufacturer }}</p>
+                <div class="row">
+                    <span class="price">&#8377; {{ medicine.price }}&emsp;</span>
+                    <button mat-flat-button color="primary" (click)="addToCart(medicine)">Add to Cart</button>
+                </div>
+            </div>
+        </a>
+    </section>
+</main>
+
+<footer>
+    <mat-paginator [length]="24"
+              [pageSize]="6"
+              [pageSizeOptions]="[6, 12, 18, 24]"
+              aria-label="Select page">
+            </mat-paginator>
+</footer>

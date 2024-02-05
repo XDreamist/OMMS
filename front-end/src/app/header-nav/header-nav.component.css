@@ -1,0 +1,28 @@
+header 
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+} 
+
+.spacer
+{
+    flex: 1 1 auto;
+}
+
+span
+{
+    padding: 20px;
+}
+
+a
+{
+    padding: 30px;
+}
+
+.log
+{
+    margin-right: -16px;
+}
